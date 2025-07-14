@@ -1,54 +1,80 @@
 # Spring-Boot-Projects-2
-## 🏷️ Project: Gallerist – Car Purchasing Platform
-This project brings together all major Spring technologies developed and practiced so far from Spring Boot Projects-1 repository, by implementing a car purchasing application that simulates a real-world dealership workflow.
+## 🏷️ Project: Gallerist – Car Purchasing System
 
-The system is built using Spring Web, Spring Data JPA, Spring Security (JWT-based authentication), Lombok, and PostgreSQL. It features a full-stack backend where customers can browse and purchase cars from galleries, with financial calculations based on live USD/TRY exchange rates retrieved from the official Central Bank of the Republic of Turkey (CBRT) web service.
+A Spring Boot project simulating a real-world car dealership platform, combining multiple Spring technologies in a complete backend system.
 
-🔧 Technologies & Features
-Authentication & Authorization: Implemented via JWT, including login, registration, token refresh, and protected endpoints.
+## 📌 Project Description
 
-Exception Handling: Global exception handling layer ensures consistent and user-friendly error responses across the system.
+Gallerist is a backend system where customers can browse and purchase cars listed by gallerists. The application dynamically retrieves the USD/TRY exchange rate from the Central Bank of the Republic of Turkey (CBRT) to perform real-time currency conversions during car sales.
 
-Domain Entities & Services:
-Includes full CRUD operations for:
-Customer
-Gallerist
-Car
-Address
-Account
-GalleristCar
-SoldCar
-
-Exchange Rate Integration:
-A scheduled service connects to the CBRT SOAP Web Service to fetch the latest USD/TRY exchange rate daily, which is then used in price conversions during car purchasing.
-
-Core Business Logic – Car Purchase Flow:
-A buyCar POST endpoint is implemented under the SoldCarService, which:
-Checks if the desired car is available for purchase
-Converts the car price from USD to TRY using the daily exchange rate
-Verifies if the customer has sufficient balance
-Finalizes the sale by updating ownership, customer account balance, car status and deducting the payment
+If a customer has sufficient balance (in TRY) based on the car’s USD price, the transaction is executed successfully.
 
 ---
-## Ön Koşullar
-- Java
-- Spring Tools for Eclipse
-- PosgreSQL
-- DBeaver
-- Postman
-- JUnit 5
+
+## ⚙️ Technologies Used
+
+- **Java 17**
+- **Spring Boot**
+  - Spring Web
+  - Spring Data JPA
+  - Spring Security (JWT)
+  - Spring Validation
+- **Lombok**
+- **PostgreSQL**
+- **Swagger**
+- **CBRT SOAP Web Service (Exchange Rate API)**
+
 ---
-## Kurulumlar
-- [Java](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)  version 17 used. For the installment, you can check the url.
-- [Spring Tools for Eclipse] https://spring.io/tools)  version 4.30 used. For the installment, you can check the url.
-- [PostgreSQL]( https://www.postgresql.org/download/windows/)  version 14 used. For the installment, you can check the url.
-- [DBeaver]( https://dbeaver.io/download/)version 25.0.5 used. For the installment, you can check the url.
-- [Postman]( https://www.postman.com/downloads/). For the installment, you can check the url.
-- Proje olarak Maven, Yazılım dili olarak Java versiyon 17, Spring Boot versiyonu olarak 3.5.0, packaging olarak .jar seçimleri ile bütün projeler oluşturulmuştur.
+
+## 🧩 Key Features
+
+### 🔐 Authentication & Authorization
+
+- JWT-based security
+- Registration, login, and token refresh mechanisms
+- Secure endpoints using filters
+
+### 📄 Global Exception Handling
+
+- Consistent error response structure across the application
+- Handles validation, authentication, and business logic errors
+
+### 🧱 Domain Models & Services
+
+- `Customer`, `Account`, `Gallerist`, `Car`, `GalleristCar`, `Address`, `SoldCar`
+- All entities have fully implemented service layers including `save` operations
+
+### 💱 Live Exchange Rate Integration
+
+- Scheduled service fetches daily USD/TRY rate from CBRT SOAP API
+- Used in car price calculations during sales
+
+### 🛒 Car Purchase Flow (`/buyCar`)
+
+- Verifies if the car is still available
+- Converts car price using current exchange rate
+- Checks if customer has enough balance
+- If all checks pass → creates a `SoldCar` record and finalizes the transaction
+
 ---
-### Kullanılan Kütüphaneler
-- [react-bootstrap](https://react-bootstrap.github.io/getting-started/introduction/)
-- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
-- [axios](https://www.npmjs.com/package/axios)
-- [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
----
+
+## 📬 Endpoints
+
+### 🔐 Authentication
+- `POST /register` – Register a new user  
+- `POST /authenticate` – Login and receive JWT token  
+- `POST /refreshToken` – Refresh expired access token  
+
+### 🛒 Car Purchase
+- `POST /buyCar` – Buy a car using real-time exchange rate  
+
+### 💾 Save Operations
+- `POST /address/save` – Save an Address  
+- `POST /account/save` – Save an Account  
+- `POST /customer/save` – Save a Customer  
+- `POST /gallerist/save` – Save a Gallerist  
+- `POST /car/save` – Save a Car  
+- `POST /galleristCar/save` – Save a GalleristCar  
+  
+
+

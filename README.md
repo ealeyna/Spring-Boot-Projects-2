@@ -19,7 +19,6 @@ If a customer has sufficient balance (in TRY) based on the car’s USD price, th
   - Spring Data JPA
   - Spring Security (JWT)
   - Spring Validation
-- **Lombok**
 - **PostgreSQL** 
 
 ---

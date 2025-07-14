@@ -20,9 +20,7 @@ If a customer has sufficient balance (in TRY) based on the car’s USD price, th
   - Spring Security (JWT)
   - Spring Validation
 - **Lombok**
-- **PostgreSQL**
-- **Swagger**
-- **CBRT SOAP Web Service (Exchange Rate API)**
+- **PostgreSQL** 
 
 ---
 
@@ -75,6 +73,23 @@ If a customer has sufficient balance (in TRY) based on the car’s USD price, th
 - `POST /gallerist/save` – Save a Gallerist  
 - `POST /car/save` – Save a Car  
 - `POST /galleristCar/save` – Save a GalleristCar  
-  
+
+---
+
+## ⚙️ Installations
+Before getting started, ensure that the following tools are installed:
+- [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) — Required to compile and run the project.
+- [Spring Tools for Eclipse 4.30](https://spring.io/tools) — IDE used for developing and managing Spring Boot projects.
+- [PostgreSQL 14](https://www.postgresql.org/download/) — The relational database used in this project.
+- [DBeaver 25.0.5](https://dbeaver.io/download/) — Database management tool used to interact with PostgreSQL.
+- [Postman](https://www.postman.com/downloads/) — For testing API endpoints and HTTP requests.
+- [JUnit 5](https://junit.org/junit5/) — Used for writing and running unit tests.
+
+## 🛠️ Project Configuration
+All projects were created using the following setup:
+- **Project Type:** Maven
+- **Programming Language:** Java 17
+- **Spring Boot Version:** 3.5.0
+- **Packaging:** `.jar`---
 
 

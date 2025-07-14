@@ -1,5 +1,5 @@
 # Spring-Boot-Projects-2
-## : 🏷️ Project: Gallerist – Car Purchasing Platform
+## 🏷️ Project: Gallerist – Car Purchasing Platform
 This project brings together all major Spring technologies developed and practiced so far from Spring Boot Projects-1 repository, by implementing a car purchasing application that simulates a real-world dealership workflow.
 
 The system is built using Spring Web, Spring Data JPA, Spring Security (JWT-based authentication), Lombok, and PostgreSQL. It features a full-stack backend where customers can browse and purchase cars from galleries, with financial calculations based on live USD/TRY exchange rates retrieved from the official Central Bank of the Republic of Turkey (CBRT) web service.
